@@ -11,7 +11,7 @@ level 1
 let guess = parseInt(prompt("Your Guess: "))
 
 const guessingGame = (range) => {
-  while (trial > 0) {
+  while (true) {
     let random = Math.floor(Math.random() * range) + 1;
     if (guess === random) {
       range++
@@ -25,7 +25,7 @@ const guessingGame = (range) => {
       console.log(`Sorry try again, you have ${trial} trial remaining `)
       guess = parseInt(prompt("Your Guess: "))
       trial--
-      if (guess !== random) {
+      if (guess !== random || trial === 0) {
         console.log(`Sorry ${username}, you lost`)
         break
       }
